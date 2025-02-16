@@ -1,5 +1,6 @@
 services:
   open-webui:
+    network_mode: "host"
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     extra_hosts:
@@ -17,6 +18,7 @@ services:
       - ollama
 
   ollama:
+    network_mode: "host"
     image: ollama/ollama:latest
     container_name: ollama
     environment:
